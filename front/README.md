@@ -15,7 +15,7 @@ property ="value"  in ts file then use  {{property}} in html
 
 //passing data from parents to children
 make users array data in parent app.component.ts
-
+ng g p pipes/contryCode
 
 
 

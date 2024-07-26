@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input, numberAttribute } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, Input, numberAttribute, Output, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,13 +11,15 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePageComponent {
 
-  @Input({alias:"username",transform:fromatName}) name="";
+  @Input({alias:"username"}) name="";
   @Input() status!: string;
   @Input({transform:booleanAttribute}) isSingle!: boolean;
   @Input({transform:numberAttribute}) sallery!:number;
 
-
-
+@Output() myEvent =new EventEmitter<{name:string,newSalary:number}>();
+sendData(){
+  this.myEvent.emit({name:this.name,newSalary:57000});
+}
 
 // name="rishi"
 // status="single"
