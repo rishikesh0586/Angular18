@@ -1,2 +1,10 @@
 <h1>hello angular</h1>
-<app-home-page></app-home-page>
+<div>
+    <!-- this is how we pass data from parent to child in angular -->
+@for(user of users;track user.id){
+    <app-home-page [username]="user.name" [status]="user.status" [isSingle]="user.isSingle" [sallery]="user.sallery"></app-home-page>
+    <!-- <h4>name:{{user.name}} status:{{user.status}} relationship:{{user.isSingle?"sinle":"mingle"}}  sallery:{{user.sallery}}</h4> -->
+
+}
+
+</div>

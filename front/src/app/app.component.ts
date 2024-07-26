@@ -11,4 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 })
 export class AppComponent {
   title = 'front';
+  users=[{id:1,name:"rishi",status:"single",isSingle:false, sallery:25000},
+    {id:2,name:"ayush yadav",   status:"single",   isSingle:true,sallery:35000},
+      {id:3,name:"rajat", status:"single",  isSingle:false,  sallery:23000}]
 }
