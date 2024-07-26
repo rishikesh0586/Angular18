@@ -1,0 +1,31 @@
+<p>home-page works!</p>
+<h2>name:{{name}}</h2>
+<h2>status:{{status}}</h2>
+<h2>sallery:{{sallery}}</h2>
+<button [disabled]="isDisabled">click me</button>
+<!-- <input type="text"  (input) ="onChange($event)"> -->
+<input type="text" [(ngModel)]="val">
+<h3>input value is {{val}}</h3>
+
+<div>
+    <!-- this is newer syntax of control flow after angular 17 -->
+@for(user of users;track user.id){
+   @if(user.sallery>25000){
+    <h4>name:{{user.name}} status:{{user.status}} relationship:{{user.isSingle?"sinle":"mingle"}}  sallery:{{user.sallery}}</h4>
+}@else{
+    <h4>name:{{user.name}}  status:hidden sallery:hidden</h4>
+}
+
+}
+
+</div>
+<hr />
+<!-- this is syntax of control flow before angular 17 and for this 
+ put commonModule in import of home.component.ts -->
+<div *ngFor="let user of users">
+    <h4 *ngIf="user.sallery>25000;else elseBlock">name:{{user.name}} status:{{user.status}} relationship:{{user.isSingle?"sinle":"mingle"}}  sallery:{{user.sallery}}</h4>
+    <ng-template #elseBlock>
+        <h4>name:{{user.name}}  status:hidden sallery:hidden</h4>
+    </ng-template>
+
+</div>
